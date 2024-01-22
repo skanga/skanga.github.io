@@ -15,6 +15,8 @@
       var videoId = urlSearchParams.get('v');
       var domName = urlSearchParams.get('h');
       domName = domName.replace(/^www\./, '');
+      console.log('Video Id ' + videoId);
+      console.log('Domain Name ' + domName);
 
       // Check if videoId is null or empty
       if (videoId !== null && videoId.trim() !== '' && domName.trim() == 'youtube.com') {
