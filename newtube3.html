@@ -27,23 +27,14 @@
   <div id="message"></div>
 
   <script>
-
-    // Get the hostname from the current URL
-    var currentHostname = window.location.hostname;
-
-    // Remove "www." if present
-    var strippedHostname = currentHostname.replace(/^www\./, '');
-
-    // Check if the stripped hostname matches a specific value
-    if (strippedHostname === 'youtube.com') {
-      // OK, the hostname is 'youtube.com' so look for videoId
-      console.log('The current hostname is youtube.com');
       urlSearchParams = new URLSearchParams(window.location.href.split('?')[1]);
       var videoId = urlSearchParams.get('v');
-	  alert(videoId)
+      var domName = urlSearchParams.get('h');
+	  domName = domName.replace(/^www\./, '');
+	  alert("VID: " + videoId + "\nHost: " + domName)
 
       // Check if videoId is null or empty
-      if (videoId !== null && videoId.trim() !== '') {
+      if (videoId !== null && videoId.trim() !== '' && domName !== null && domName.trim() !== '') {
         // If not null or empty, create the iframe with the dynamically set videoId
         var iframe = document.createElement('iframe');
         iframe.setAttribute('id', 'youtubeVideo');
@@ -56,9 +47,9 @@
         document.getElementById('message').innerText = 'Invalid videoId. No video available.';
       }
     } else {
-      // Do something else when the hostname is not 'youtube.com'
-      console.log('The current hostname is not youtube.com');
-      document.getElementById('message').innerText = 'The current hostname is "' + strippedHostname + '" not youtube.com.';
+      // Do something else when the domain name is not 'youtube.com'
+      console.log('The current domain name is not youtube.com');
+      document.getElementById('message').innerText = 'The current domain name is not youtube.com.';
     }
 
   </script>
