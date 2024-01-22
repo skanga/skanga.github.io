@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Webpage</title>
+  <style>
+    /* Add some additional styling for responsiveness */
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    iframe {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <!-- Create an empty iframe with an id for JavaScript manipulation -->
+  <iframe id="vid" frameborder="0" allowfullscreen></iframe>
+
+  <script>
+    urlSearchParams = new URLSearchParams(window.location.href.split('?')[1]);
+    vidId = urlSearchParams.get('v');
+	alert(vidId)
+    // Replace the 'src' attribute with the dynamically set videoId
+    document.getElementById('vid').src = 'https://www.youtube.com/embed/' + vidId + '?autoplay=1';
+  </script>
+
+</body>
+</html>
