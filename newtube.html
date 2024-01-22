@@ -13,13 +13,17 @@
   <script>
     urlSearchParams = new URLSearchParams(window.location.href.split('?')[1]);
     videoId = urlSearchParams.get('v');
-    iframe = document.createElement("iframe");
-    iframe.width = "100%";
-    iframe.height = "100%";
-    iframe.src = `https://www.youtube.com/embed/${videoId}`;
-    iframe.frameBorder = "0";
-    iframe.allowFullscreen = true;
-    document.body.appendChild(iframe);
+    if (videoId === null) {
+      document.write("<p>The variable is null. Here is some information.</p>");
+    } else {
+      iframe = document.createElement("iframe");
+      iframe.width = "100%";
+      iframe.height = "100%";
+      iframe.src = `https://www.youtube.com/embed/${videoId}`;
+      iframe.frameBorder = "0";
+      iframe.allowFullscreen = true;
+      document.body.appendChild(iframe);
+    }
   </script>
 </body>
 </html>
