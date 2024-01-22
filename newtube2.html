@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Webpage</title>
+  <title>Video</title>
   <style>
     /* Add some additional styling for responsiveness */
     body {
@@ -14,21 +14,35 @@
       width: 100%;
       height: 100%;
     }
+    #message {
+      text-align: center;
+      padding: 20px;
+      font-size: 18px;
+      color: red; /* Customize the color */
+    }
   </style>
 </head>
 <body>
-  <!-- Create an empty iframe with an id for JavaScript manipulation -->
-  <iframe id="vid" frameborder="0" allowfullscreen></iframe>
+
+  <div id="message"></div>
 
   <script>
     urlSearchParams = new URLSearchParams(window.location.href.split('?')[1]);
-    vidId = urlSearchParams.get('v');
-    alert(vidId)
-    if (videoId === null) {
-      document.write("<p>The variable is null. Here is some information.</p>");
+    var videoId = urlSearchParams.get('v');
+	alert(videoId)
+
+    // Check if videoId is null or empty
+    if (videoId !== null && videoId.trim() !== '') {
+      // If not null or empty, create the iframe with the dynamically set videoId
+      var iframe = document.createElement('iframe');
+      iframe.setAttribute('id', 'youtubeVideo');
+      iframe.setAttribute('src', 'https://www.youtube.com/embed/' + videoId);
+      iframe.setAttribute('frameborder', '0');
+      iframe.setAttribute('allowfullscreen', '');
+      document.body.appendChild(iframe);
     } else {
-      // Replace the 'src' attribute with the dynamically set videoId
-      document.getElementById('vid').src = 'https://www.youtube.com/embed/' + vidId + '?autoplay=1';
+      // If null or empty, display a message
+      document.getElementById('message').innerText = 'Invalid videoId. No video available.';
     }
   </script>
 
