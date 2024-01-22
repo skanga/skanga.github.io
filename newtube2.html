@@ -29,7 +29,7 @@
   <script>
     urlSearchParams = new URLSearchParams(window.location.href.split('?')[1]);
     var videoId = urlSearchParams.get('v');
-	alert(videoId)
+	alert("vid: "+videoId)
 
     // Check if videoId is null or empty
     if (videoId !== null && videoId.trim() !== '') {
