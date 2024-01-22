@@ -5,19 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Video</title>
   <style>
-    /* Add some additional styling for responsiveness */
-    body {
-      margin: 0;
-      padding: 0;
-    }
-    iframe {
-      width: 100%;
-      height: 100%;
-    }
+    body, html {margin: 0;padding: 0;width: 100%;height: 100%;overflow: hidden;} 
+    iframe {width: 100%;height: 100%;}
     #message {
       text-align: center;
       padding: 20px;
       font-size: 18px;
+      font-face: Verdana, Arial, Helvetica;
       color: red; /* Customize the color */
     }
   </style>
@@ -30,8 +24,7 @@
       urlSearchParams = new URLSearchParams(window.location.href.split('?')[1]);
       var videoId = urlSearchParams.get('v');
       var domName = urlSearchParams.get('h');
-  	  domName = domName.replace(/^www\./, '');
-	    alert("VID: " + videoId + "\nHost: " + domName)
+      domName = domName.replace(/^www\./, '');
 
       // Check if videoId is null or empty
       if (videoId !== null && videoId.trim() !== '' && domName !== null && domName.trim() !== '') {
@@ -40,7 +33,7 @@
         iframe.setAttribute('id', 'youtubeVideo');
         iframe.setAttribute('src', 'https://www.youtube.com/embed/' + videoId);
         iframe.setAttribute('frameborder', '0');
-        iframe.setAttribute('allowfullscreen', '');
+        iframe.setAttribute('allowfullscreen', 'true');
         document.body.appendChild(iframe);
       } else {
         // If null or empty, display a message
