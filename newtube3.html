@@ -30,10 +30,11 @@
       if (videoId !== null && videoId.trim() !== '' && domName !== null && domName.trim() !== '') {
         // If not null or empty, create the iframe with the dynamically set videoId
         var iframe = document.createElement('iframe');
-        iframe.setAttribute('id', 'youtubeVideo');
-        iframe.setAttribute('src', 'https://www.youtube.com/embed/' + videoId);
-        iframe.setAttribute('frameborder', '0');
-        iframe.setAttribute('allowfullscreen', 'true');
+        iframe.width = "100%";
+        iframe.height = "100%";
+        iframe.src = `https://www.youtube.com/embed/${videoId}?&autoplay=1`;
+        iframe.frameBorder = "0";
+        iframe.allowFullscreen = true;
         document.body.appendChild(iframe);
       } else {
         // If null or empty, display a message
