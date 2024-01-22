@@ -5,15 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Video</title>
   <style>
-    body, html {margin: 0;padding: 0;width: 100%;height: 100%;overflow: hidden;} 
+    body, html {margin: 0;padding: 0;width: 100%;height: 100%;overflow: hidden;font-size: 18px; font-family: Verdana, Arial, Helvetica;
+} 
     iframe {width: 100%;height: 100%;}
-    #message {
-      text-align: center;
-      padding: 20px;
-      font-size: 18px;
-      font-face: Verdana, Arial, Helvetica;
-      color: red; /* Customize the color */
-    }
   </style>
 </head>
 <body>
@@ -34,11 +28,9 @@
         iframe.allowFullscreen = true;
         document.body.appendChild(iframe);
       } else {
-        document.write('<div class="message">');
-        document.write('<br>Video Id ' + videoId);
-        document.write('<br>Domain Name ' + domName);
+        document.write('<br>Video Id: ' + videoId);
+        document.write('<br>Domain Name: ' + domName);
         document.write('<br>Invalid videoId or host. No video available.');
-        document.write('</div>');
       }
   </script>
 
