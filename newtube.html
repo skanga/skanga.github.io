@@ -13,6 +13,7 @@
   <script>
     urlSearchParams = new URLSearchParams(window.location.href.split('?')[1]);
     videoId = urlSearchParams.get('v');
+    alert(videoId);
     if (videoId === null) {
       document.write("<p>The variable is null. Here is some information.</p>");
     } else {
