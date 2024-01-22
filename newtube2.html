@@ -23,9 +23,13 @@
   <script>
     urlSearchParams = new URLSearchParams(window.location.href.split('?')[1]);
     vidId = urlSearchParams.get('v');
-	alert(vidId)
-    // Replace the 'src' attribute with the dynamically set videoId
-    document.getElementById('vid').src = 'https://www.youtube.com/embed/' + vidId + '?autoplay=1';
+    alert(vidId)
+    if (videoId === null) {
+      document.write("<p>The variable is null. Here is some information.</p>");
+    } else {
+      // Replace the 'src' attribute with the dynamically set videoId
+      document.getElementById('vid').src = 'https://www.youtube.com/embed/' + vidId + '?autoplay=1';
+    }
   </script>
 
 </body>
