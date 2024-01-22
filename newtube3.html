@@ -24,7 +24,7 @@
       domName = domName.replace(/^www\./, '');
 
       // Check if videoId is null or empty
-      if (videoId !== null && videoId.trim() !== '' && domName !== null && domName.trim() !== '') {
+      if (videoId !== null && videoId.trim() !== '' && domName.trim() == 'youtube.com') {
         // If not null or empty, create the iframe with the dynamically set videoId
         var iframe = document.createElement('iframe');
         iframe.width = "100%";
