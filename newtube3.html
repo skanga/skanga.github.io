@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video</title>
+  <style>
+    /* Add some additional styling for responsiveness */
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    iframe {
+      width: 100%;
+      height: 100%;
+    }
+    #message {
+      text-align: center;
+      padding: 20px;
+      font-size: 18px;
+      color: red; /* Customize the color */
+    }
+  </style>
+</head>
+<body>
+
+  <div id="message"></div>
+
+  <script>
+
+    // Get the hostname from the current URL
+    var currentHostname = window.location.hostname;
+
+    // Remove "www." if present
+    var strippedHostname = currentHostname.replace(/^www\./, '');
+
+    // Check if the stripped hostname matches a specific value
+    if (strippedHostname === 'youtube.com') {
+      // OK, the hostname is 'youtube.com' so look for videoId
+      console.log('The current hostname is youtube.com');
+      urlSearchParams = new URLSearchParams(window.location.href.split('?')[1]);
+      var videoId = urlSearchParams.get('v');
+	  alert(videoId)
+
+      // Check if videoId is null or empty
+      if (videoId !== null && videoId.trim() !== '') {
+        // If not null or empty, create the iframe with the dynamically set videoId
+        var iframe = document.createElement('iframe');
+        iframe.setAttribute('id', 'youtubeVideo');
+        iframe.setAttribute('src', 'https://www.youtube.com/embed/' + videoId);
+        iframe.setAttribute('frameborder', '0');
+        iframe.setAttribute('allowfullscreen', '');
+        document.body.appendChild(iframe);
+      } else {
+        // If null or empty, display a message
+        document.getElementById('message').innerText = 'Invalid videoId. No video available.';
+      }
+    } else {
+      // Do something else when the hostname is not 'youtube.com'
+      console.log('The current hostname is not youtube.com');
+      document.getElementById('message').innerText = 'The current hostname is not youtube.com.';
+    }
+
+  </script>
+
+</body>
+</html>
