@@ -17,9 +17,6 @@
   </style>
 </head>
 <body>
-
-  <div id="message"></div>
-
   <script>
       urlSearchParams = new URLSearchParams(window.location.href.split('?')[1]);
       var videoId = urlSearchParams.get('v');
@@ -38,9 +35,12 @@
         document.body.appendChild(iframe);
       } else {
         // If null or empty, display a message
+        var msgDiv = document.createElement('div');
+        msgDiv.id = "message";
         console.log('Video Id ' + videoId);
         console.log('Domain Name ' + domName);
         document.getElementById('message').innerText = 'Invalid videoId or host. No video available.';
+        document.body.appendChild(msgDiv);
       }
   </script>
 
