@@ -34,6 +34,9 @@
         iframe.allowFullscreen = true;
         document.body.appendChild(iframe);
       } else {
+        document.write('<br>Video Id ' + videoId);
+        document.write('<br>Domain Name ' + domName);
+
         // If null or empty, display a message
         var msgDiv = document.createElement('div');
         msgDiv.id = "message";
