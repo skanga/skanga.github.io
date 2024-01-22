@@ -34,16 +34,11 @@
         iframe.allowFullscreen = true;
         document.body.appendChild(iframe);
       } else {
+        document.write('<div class="message">');
         document.write('<br>Video Id ' + videoId);
         document.write('<br>Domain Name ' + domName);
-
-        // If null or empty, display a message
-        var msgDiv = document.createElement('div');
-        msgDiv.id = "message";
-        console.log('Video Id ' + videoId);
-        console.log('Domain Name ' + domName);
-        document.getElementById('message').innerText = 'Invalid videoId or host. No video available.';
-        document.body.appendChild(msgDiv);
+        document.write('<br>Invalid videoId or host. No video available.');
+        document.write('</div>');
       }
   </script>
 
