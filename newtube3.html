@@ -14,7 +14,9 @@
       urlSearchParams = new URLSearchParams(window.location.href.split('?')[1]);
       var videoId = urlSearchParams.get('v');
       var domName = urlSearchParams.get('h');
-      domName = domName.replace(/^www\./, '');
+      if (domName !== null) {
+        domName = domName.replace(/^www\./, '');
+      }
       console.log('Video Id ' + videoId);
       console.log('Domain Name ' + domName);
 
