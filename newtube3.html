@@ -30,8 +30,8 @@
       urlSearchParams = new URLSearchParams(window.location.href.split('?')[1]);
       var videoId = urlSearchParams.get('v');
       var domName = urlSearchParams.get('h');
-	  domName = domName.replace(/^www\./, '');
-	  alert("VID: " + videoId + "\nHost: " + domName)
+  	  domName = domName.replace(/^www\./, '');
+	    alert("VID: " + videoId + "\nHost: " + domName)
 
       // Check if videoId is null or empty
       if (videoId !== null && videoId.trim() !== '' && domName !== null && domName.trim() !== '') {
@@ -44,14 +44,10 @@
         document.body.appendChild(iframe);
       } else {
         // If null or empty, display a message
-        document.getElementById('message').innerText = 'Invalid videoId. No video available.';
+        console.log('Video Id ' + videoId);
+        console.log('Domain Name ' + domName);
+        document.getElementById('message').innerText = 'Invalid videoId or host. No video available.';
       }
-    } else {
-      // Do something else when the domain name is not 'youtube.com'
-      console.log('The current domain name is not youtube.com');
-      document.getElementById('message').innerText = 'The current domain name is not youtube.com.';
-    }
-
   </script>
 
 </body>
