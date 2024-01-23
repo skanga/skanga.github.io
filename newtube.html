@@ -31,9 +31,7 @@
         iframe.allowFullscreen = true;
         document.body.appendChild(iframe);
       } else if (videoId === null && domName === null) {
-        document.write('<h1>YTclean Bookmarklet</h1>');
-        document.write('<p>Simply drag the YTclean button below into your bookmarks bar. Then click it when on any Youtube page.</p>');
-        document.write('<p><a title="YTclean" href="javascript:(function() { urlParams = new URLSearchParams(window.location.href.split(&quot;?&quot;)[1]); videoId = urlParams.get(&quot;v&quot;); hostName = window.location.hostname; window.location.href = "https://skanga.github.io/newtube.html?v=" + videoId + "&h=" + hostName;})();"><img title="Drag me to bookmark bar" src="youtube.png" width="120px" border="0" /></a></p>');
+        window.location.href = '/';
       } else {
         document.write('<br>Video Id: ' + videoId);
         document.write('<br>Domain Name: ' + domName);
