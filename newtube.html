@@ -30,7 +30,7 @@
         iframe.frameBorder = "0";
         iframe.allowFullscreen = true;
         document.body.appendChild(iframe);
-      } else if (videoId === null && domName === null) {
+      } else if (videoId === null || domName === null) {
         window.location.href = '/';
       } else {
         document.write('<br>Video Id: ' + videoId);
