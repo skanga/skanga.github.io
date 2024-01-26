@@ -24,6 +24,7 @@
       if (videoId !== null && videoId.trim() !== '' && domName.trim() == 'youtube.com') {
         // If not null or empty, create the iframe with the dynamically set videoId
         var iframe = document.createElement('iframe');
+        iframe.id = "ytframe";
         iframe.width = "100%";
         iframe.height = "100%";
         iframe.src = `https://www.youtube.com/embed/${videoId}?&autoplay=1`;
@@ -37,6 +38,8 @@
         document.write('<br>Domain Name: ' + domName);
         document.write('<br>Invalid videoId or host. No video available.');
       }
+      document.title = document.getElementById("ytframe").contentDocument.document.title;
+
   </script>
 
 </body>
