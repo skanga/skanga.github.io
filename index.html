@@ -15,7 +15,7 @@
     <h1>YTclean Bookmarklet</h1>
     <p>Simply drag the YTclean link below into your bookmarks bar. Then click it when on any Youtube page.</p>
     <p>
-      <a title="YTclean" href="javascript:(function() { urlParams = new URLSearchParams(window.location.href.split('?')[1]); videoId = urlParams.get('v'); hostName = window.location.hostname; window.location.href = 'https://skanga.github.io/newtube.html?v=' + videoId + '&h=' + hostName;})();">YTclean</a>
+      <a title="YTclean" href="javascript:(function() { urlParams = new URLSearchParams(window.location.href.split('?')[1]); videoId = urlParams.get('v'); hostName = window.location.hostname; window.location.href = 'https://skanga.github.io/newtube.html?v=' + videoId + '&h=' + hostName + '&t=' + document.title;})();">YTclean</a>
     </p>
   </div>
 </body>
